@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+}
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    padding: 30px;
+    background-color: #232323;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: containerFade 2s ease forwards;
+}
+
+h1 {
+    color: #ff414d;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease forwards;
+}
+
+/* Стили блоков миссий */
+.mission-block {
+    background-color: #2e2e2e;
+    border: 1px solid #ff414d;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.mission-block h2 {
+    color: #ff414d;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.mission-block p {
+    line-height: 1.6;
+    color: #e3e3e3;
+}
+
+/* Анимации для блоков */
+@keyframes containerFade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация появления блоков по очереди */
+.fade-in:nth-child(2) { animation: fadeIn 1.5s 0.3s forwards; }
+.fade-in:nth-child(3) { animation: fadeIn 1.5s 0.6s forwards; }
+.fade-in:nth-child(4) { animation: fadeIn 1.5s 0.9s forwards; }
+.fade-in:nth-child(5) { animation: fadeIn 1.5s 1.2s forwards; }
+.fade-in:nth-child(6) { animation: fadeIn 1.5s 1.5s forwards; }
+.slide-up:nth-child(2) { animation: slideUp 1.5s 0.3s forwards; }
+.slide-up:nth-child(3) { animation: slideUp 1.5s 0.6s forwards; }
+.slide-up:nth-child(4) { animation: slideUp 1.5s 0.9s forwards; }
+.slide-up:nth-child(5) { animation: slideUp 1.5s 1.2s forwards; }
+.slide-up:nth-child(6) { animation: slideUp 1.5s 1.5s forwards; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ховер эффект для блоков */
+.mission-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 65, 77, 0.4);
+}
+
